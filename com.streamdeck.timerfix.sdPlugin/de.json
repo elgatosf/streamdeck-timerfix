@@ -1,0 +1,15 @@
+{
+    "Description": "Dies zeigt, wie man die Timers repariert.",
+    "Name": "Stream Deck Timerfix",
+    "Category": "Templates",
+    "com.streamdeck.timerfix.action": {
+        "Name": "Timer-Fix",
+        "Tooltip": "Dies zeigt, wie man die Timers repariert."
+    },
+    "Localization": {
+        "More info": "Mehr Infos",
+        "Message": "Nachricht",
+        "Click Me": "Klicke mich",
+        "Button": "Taste"
+    }
+}

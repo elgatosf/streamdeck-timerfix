@@ -1,0 +1,15 @@
+{
+    "Description": "This shows how to fix timers.",
+    "Name": "Stream Deck Timefix",
+    "Category": "Templates",
+    "com.streamdeck.timerfix.action": {
+        "Name": "Timer-Fix",
+        "Tooltip": "This shows how to fix timers."
+    },
+    "Localization": {
+        "More info": "More info",
+        "Message": "Message",
+        "Click Me": "Click Me",
+        "Button": "Button"
+    }
+}
