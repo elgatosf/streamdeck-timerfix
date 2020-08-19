@@ -7,6 +7,12 @@ let ESDTimerWorker = new Worker(URL.createObjectURL(
 ));
 ESDTimerWorker.timerId = 1;
 ESDTimerWorker.timers = {};
+const ESDDefaultTimeouts = {
+    timeout: 0,
+    interval: 10
+};
+
+Object.freeze(ESDDefaultTimeouts);
 
 function _setTimer(callback, delay, type, params) {
     const id = ESDTimerWorker.timerId++;
@@ -77,11 +83,11 @@ function timerFn() {
             timers[e.data.id] = setTimeout(() => {
                 postMessage({id: e.data.id});
                 clearTimerAndRemove(e.data.id); //cleaning up
-            }, e.data.delay || 0);
+            }, Math.max(e.data.delay || 0));
         } else if(e.data.type === 'setInterval') {
             timers[e.data.id] = setInterval(() => {
                 postMessage({id: e.data.id});
-            }, e.data.delay || 0);
+            }, Math.max(e.data.delay || ESDDefaultTimeouts.interval));
         }
     };
 }
